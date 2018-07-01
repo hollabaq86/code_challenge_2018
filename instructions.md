@@ -32,7 +32,15 @@ As someone who has been at B for over a year, you must have heard about the ‘L
 
 ## Specifications
 
-Your program will take as input a list of people and a number which represents the size of the group. It will randomly assign people to groups of the specified size and then output the groups, listing the people in each group. For example, if 22 people sign up and we would like them to meet in groups of 5, then the tool should generate 4 groups of 5 random people and 1 group of 2 people. A request to regenerate the groups, will randomize the input again and generate a different assignment of people to the groups. If the list of names contains duplicates, it will be considered as a single entry. The user will decide how many names to input in the list - your program should not limit how many can be accepted.
+- Your program will take as input a list of people and a number which represents the size of the group. 
+
+- It will randomly assign people to groups of the specified size and then output the groups, listing the people in each group. For example, if 22 people sign up and we would like them to meet in groups of 5, then the tool should generate 4 groups of 5 random people and 1 group of 2 people. 
+
+- A request to regenerate the groups, will randomize the input again and generate a different assignment of people to the groups.
+
+- If the list of names contains duplicates, it will be considered as a single entry.
+
+- The user will decide how many names to input in the list - your program should not limit how many can be accepted.
 
 ## Assumptions
 
