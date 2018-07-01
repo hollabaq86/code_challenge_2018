@@ -21,20 +21,7 @@ describe Picker do
 		
 		it 'dedupes the list of entries' do
 			expect(@picker.output.flatten.length).to eql(3)
-			expect(@picker.output.select{ |name| name == 'jack' }.length).to eql(1)
-		end
-		
-		it 'creates and array of arrays' do
-			expect(@picker.output).to be_an(Array)
-			@picker.output.each { |group| expect(group).to be_an(Array)}
-		end
-
-		it 'creates groups according to a specified number of entries' do
-			expect(@picker.output[0].length).to eql(2)
-		end
-
-		it 'returns one group with less than the requested number of entries if the total number of entries does not divide evenly by the requested number' do
-			expect(@picker.output.last).to eql(1)
+			expect(@picker.output.flatten.select{ |name| name == 'jack' }.length).to eql(1)
 		end
 
 		it 'creates groups that are random' do
@@ -48,6 +35,19 @@ describe Picker do
 			end
 			
 			expect(jack_count).to be < 100
+		end
+		
+		it 'creates and array of arrays' do
+			expect(@picker.output).to be_an(Array)
+			@picker.output.each { |group| expect(group).to be_an(Array)}
+		end
+
+		it 'creates groups according to a specified number of entries' do
+			expect(@picker.output[0].length).to eql(2)
+		end
+
+		it 'returns one group with less than the requested number of entries if the total number of entries does not divide evenly by the requested number' do
+			expect(@picker.output.last.length).to eql(1)
 		end
 
 

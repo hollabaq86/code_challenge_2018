@@ -8,14 +8,24 @@ class Picker
 	end
 
 	def do_the_thing()
-		deduped = dedupe(@input)
+		@output = []
+		working_data = randomize(@input.uniq)
+		while working_data.length > @group_size
+			puts
+			@output << working_data.shift(@group_size)
+		end
+		if working_data.length <= @group_size
+			@output << working_data
+		end
 	end
 
-	def dedupe(source_data)
-		working_data = []
-		source_data.each do |item|
-			working_data << item if !working_data.include?(item)
+	private
+
+	def randomize(deduped_data)
+		kinda_random = Random.new.rand(5..15)
+		kinda_random.times do 
+			deduped_data.shuffle!
 		end
-		return working_data
+		return deduped_data
 	end
 end
