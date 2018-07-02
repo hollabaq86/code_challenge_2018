@@ -2,7 +2,7 @@
 
 This picks out randomized groups based on a list of entries and the number of entries per group.
 
-It requires a CSV file containing one column of entries, where each entry is a new row(please include a header).
+It requires a CSV file containing entries, they can be multiple colums, however entries are comma separated.
 
 ```
 #example test.csv
@@ -10,9 +10,15 @@ entry
 john
 jane
 jack
+
+#or test.csv
+entry1,entry2
+john,john
+jack,jack
+jane
 ```
 
-It will return a CSV file titled `results.csv`, where each row is a group of randomized entries and each column is an entry.
+It will return a CSV file titled `results.csv`, where each row is a group of randomized, deduped entries and each column is an entry.
 
 ```
 #example results.csv
@@ -23,7 +29,7 @@ jane
 
 ## dependencies
 
-This repo runs in Ruby, version 2.3.3. All dependencies are located in the Gemfile. In the command line, run:
+This repo runs in Ruby, version 2.3.0. All dependencies are located in the Gemfile. In the command line, run:
 
 ```$ bundle install```
 
