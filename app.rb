@@ -39,9 +39,10 @@ number_per_group = gets.chomp.to_i
 input = input_prepare(filename)
 # initialize Picker class and dump output to a new CSV file called results.csv
 output_prepare(Picker.new(input, number_per_group).do_the_thing())
-puts "done! ccreated results.csv"
+puts "done! created results.csv"
 regenerate_output = "y"
 while regenerate_output == "y"
+	puts ""
 	puts "would you like to regenerate the groups? y/n"
 	regenerate_output = gets.chomp
 	output_prepare(Picker.new(input, number_per_group).do_the_thing()) if regenerate_output == "y"
