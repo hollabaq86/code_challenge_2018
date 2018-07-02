@@ -17,6 +17,7 @@ class Picker
 		if working_data.length <= @group_size
 			@output << working_data
 		end
+		return @output
 	end
 
 	private
